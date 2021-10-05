@@ -1,7 +1,9 @@
 import { useQuery } from '@apollo/client'
 import React, { FC } from 'react'
+import { Button } from '../../components/Button'
 import { NoteFeed } from '../../components/NoteFeed/NoteFeed'
 import { GET_NOTES } from './Home.const'
+import { ButtonWrap } from './Home.styles'
 import { NoteFeedData, NoteFeedQuery } from './Home.types'
 
 export const Home: FC = () => {
@@ -14,5 +16,38 @@ export const Home: FC = () => {
 
 	if (error) return <p>Error!</p>
 
-	return <NoteFeed notes={data?.noteFeed.notes} />
+	const handleFetch = () => {
+		fetchMore({
+			variables: {
+				cursor: data?.noteFeed.cursor,
+			},
+			updateQuery: (previousResult, { fetchMoreResult }) => {
+				return fetchMoreResult
+					? {
+							noteFeed: {
+								cursor: fetchMoreResult.noteFeed.cursor,
+								hasNextPage: fetchMoreResult.noteFeed.hasNextPage,
+								// Совмещаем новые результаты со старыми
+								notes: [
+									...previousResult.noteFeed.notes,
+									...fetchMoreResult.noteFeed.notes,
+								],
+								__typename: 'noteFeed',
+							},
+					  }
+					: previousResult
+			},
+		})
+	}
+
+	return (
+		<>
+			<NoteFeed notes={data?.noteFeed.notes} />
+			{data?.noteFeed.hasNextPage && (
+				<ButtonWrap>
+					<Button onClick={handleFetch}>Load more</Button>
+				</ButtonWrap>
+			)}
+		</>
+	)
 }

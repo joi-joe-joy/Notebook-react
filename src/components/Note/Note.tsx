@@ -1,10 +1,12 @@
 import moment from 'moment'
-import React, { FC } from 'react'
+import React, { FC, memo } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { MetaData, MetaInfo, StyledNote, UserActions } from './Note.styles'
 import { NoteProps } from './Note.types'
 
-export const Note: FC<NoteProps> = ({ note }) => {
+export const Note: FC<NoteProps> = memo(({ note }) => {
+	if (!note) return <></>
+
 	return (
 		<StyledNote>
 			<MetaData>
@@ -25,4 +27,4 @@ export const Note: FC<NoteProps> = ({ note }) => {
 			<ReactMarkdown children={note.content} />
 		</StyledNote>
 	)
-}
+})
