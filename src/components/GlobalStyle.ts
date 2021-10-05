@@ -1,5 +1,3 @@
-// Импортируем createGlobalStyle и нормализуем
-// import normalize from 'normalize.css'
 import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`

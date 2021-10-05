@@ -29,6 +29,7 @@
     "date-fns": "2.24.0",
     "graphql": "15.6.0",
     "icons": "^1.0.0",
+    "moment": "2.29.1",
     "normalize.css": "8.0.1",
     "pages": "^0.0.16",
     "react": "17.0.2",

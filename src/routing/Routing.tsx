@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { Layout } from '../components/Layout'
+import { Layout } from '../components/Layout/Layout'
 import { Favorites } from '../pages/Favorites'
 import { Home } from '../pages/Home'
 import { MyNotes } from '../pages/MyNotes'

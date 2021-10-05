@@ -1,10 +1,6 @@
-import React, { FC } from 'react'
 import styled from 'styled-components'
-import { Header } from './Header'
-import { Navigation } from './Navigation'
 
-// Стили компонента
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
 	@media (min-width: 700px) {
 		display: flex;
 		position: relative;
@@ -15,7 +11,7 @@ const Wrapper = styled.div`
 		width: 100%;
 	}
 `
-const Main = styled.main`
+export const Main = styled.main`
 	position: fixed;
 	height: calc(100% - 185px);
 	width: 100%;
@@ -29,15 +25,3 @@ const Main = styled.main`
 		width: calc(100% - 220px);
 	}
 `
-
-export const Layout: FC = ({ children }) => {
-	return (
-		<>
-			<Header />
-			<Wrapper>
-				<Navigation />
-				<Main>{children}</Main>
-			</Wrapper>
-		</>
-	)
-}

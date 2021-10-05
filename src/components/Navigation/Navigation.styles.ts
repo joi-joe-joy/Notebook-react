@@ -1,9 +1,6 @@
-import React, { FC } from 'react'
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { ROUTE_NAMES } from '../routing/routeNames.const'
 
-const Nav = styled.nav`
+export const Nav = styled.nav`
 	padding: 1em;
 	background: #f5f4f0;
 
@@ -19,7 +16,7 @@ const Nav = styled.nav`
 	}
 `
 
-const NavList = styled.ul`
+export const NavList = styled.ul`
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -42,21 +39,3 @@ const NavList = styled.ul`
 		color: #0077cc;
 	}
 `
-
-export const Navigation: FC = () => {
-	return (
-		<Nav>
-			<NavList>
-				<li>
-					<Link to={ROUTE_NAMES.HOME}>Home</Link>
-				</li>
-				<li>
-					<Link to={ROUTE_NAMES.MY_NOTES}>My Notes</Link>
-				</li>
-				<li>
-					<Link to={ROUTE_NAMES.FAVORITES}>Favorites</Link>
-				</li>
-			</NavList>
-		</Nav>
-	)
-}
