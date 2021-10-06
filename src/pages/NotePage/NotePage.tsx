@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/client'
 import React, { FC } from 'react'
 import { useParams } from 'react-router-dom'
 import { Note } from '../../components/Note'
-import { GET_NOTE } from './NotePage.gql'
+import { GET_NOTE } from '../../gql/query'
 import { NoteData, NoteQuery } from './NotePage.types'
 
 export const NotePage: FC = () => {

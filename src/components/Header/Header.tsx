@@ -1,10 +1,10 @@
 import { useQuery } from '@apollo/client'
 import React, { FC } from 'react'
 import { Link, useHistory, withRouter } from 'react-router-dom'
+import { IS_LOGGED_IN } from '../../gql/query'
 import { SvgLogo } from '../../icons/SvgLogo'
 import { ROUTE_NAMES } from '../../routing/routeNames.const'
 import { ButtonAsLink } from '../Button'
-import { IS_LOGGED_IN } from './Header.gql'
 import { HeaderBar, LogoText, UserState } from './Header.styles'
 
 const Header: FC = () => {

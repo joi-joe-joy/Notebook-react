@@ -2,9 +2,9 @@ import { useApolloClient, useMutation } from '@apollo/client'
 import React, { FC, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { UserForm } from '../../components/UserForm'
+import { SIGNIN_USER } from '../../gql/mutation'
 import { ROUTE_NAMES } from '../../routing/routeNames.const'
 import { AuthType } from '../../types/auth.enum'
-import { SIGNIN_USER } from './SignIn.gql'
 
 export const SignIn: FC = () => {
 	const history = useHistory()

@@ -1,8 +1,8 @@
 import { useQuery } from '@apollo/client'
 import React, { FC } from 'react'
 import { Redirect, Route, RouteProps } from 'react-router-dom'
+import { IS_LOGGED_IN } from '../../gql/query'
 import { ROUTE_NAMES } from '../routeNames.const'
-import { IS_LOGGED_IN } from './PrivateRoute.gql'
 import { PrivateRouteProps } from './PrivateRoute.types'
 
 export const PrivateRoute: FC<RouteProps & PrivateRouteProps> = ({

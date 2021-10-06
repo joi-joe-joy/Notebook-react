@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/client'
 import React, { FC } from 'react'
 import { Button } from '../../components/Button'
 import { NoteFeed } from '../../components/NoteFeed/NoteFeed'
-import { GET_NOTES } from './Home.gql'
+import { GET_NOTES } from '../../gql/query'
 import { ButtonWrap } from './Home.styles'
 import { NoteFeedData, NoteFeedQuery } from './Home.types'
 
