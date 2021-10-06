@@ -23,8 +23,8 @@
   },
   "homepage": "https://github.com/joi-joe-joy/Notebook#readme",
   "dependencies": {
-    "@apollo/client": "3.4.15",
-    "apollo-link-context": "1.0.20",
+    "@apollo/client": "3.0.0-beta.24",
+    "@apollo/link-context": "2.0.0-beta.3",
     "graphql": "15.6.0",
     "moment": "2.29.1",
     "react": "17.0.2",

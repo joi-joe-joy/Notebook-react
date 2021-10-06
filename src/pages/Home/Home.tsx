@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/client'
 import React, { FC } from 'react'
 import { Button } from '../../components/Button'
 import { NoteFeed } from '../../components/NoteFeed/NoteFeed'
-import { GET_NOTES } from './Home.const'
+import { GET_NOTES } from './Home.gql'
 import { ButtonWrap } from './Home.styles'
 import { NoteFeedData, NoteFeedQuery } from './Home.types'
 
@@ -21,13 +21,12 @@ export const Home: FC = () => {
 			variables: {
 				cursor: data?.noteFeed.cursor,
 			},
-			updateQuery: (previousResult, { fetchMoreResult }) => {
+			updateQuery: (previousResult: any, { fetchMoreResult }: any) => {
 				return fetchMoreResult
 					? {
 							noteFeed: {
 								cursor: fetchMoreResult.noteFeed.cursor,
 								hasNextPage: fetchMoreResult.noteFeed.hasNextPage,
-								// Совмещаем новые результаты со старыми
 								notes: [
 									...previousResult.noteFeed.notes,
 									...fetchMoreResult.noteFeed.notes,

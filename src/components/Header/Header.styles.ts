@@ -17,3 +17,7 @@ export const LogoText = styled.h1`
 	padding: 0;
 	padding-left: 15px;
 `
+
+export const UserState = styled.div`
+	margin-left: auto;
+`
